@@ -1,0 +1,3 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/controller_workflow_job_templates
+controller_workflows: []

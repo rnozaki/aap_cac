@@ -1,8 +1,33 @@
 ---
 configs_directory: "../configs"
 configuration_items:
+  - name: controller_credentials
+    directory: "controller/controller_credentials"
+    default_attr: "ansible_facts.controller_credentials"
+    optional_attr: "ansible_facts.controller_credentials_{{ env }}"
+    role_name: "infra.aap_configuration.controller_credentials"
+  - name: controller_projects
+    directory: "controller/controller_projects"
+    default_attr: "ansible_facts.controller_projects"
+    optional_attr: "ansible_facts.controller_organization_{{ env }}"
+    role_name: "infra.aap_configuration.controller_projects"
+  - name: controller_hosts
+    directory: "controller/controller_hosts"
+    default_attr: "ansible_facts.controller_hosts"
+    optional_attr: "ansible_facts.controller_hosts_{{ env }}"
+    role_name: "infra.aap_configuration.controller_hosts"
+  - name: controller_host_groups
+    directory: "controller/controller_host_groups"
+    default_attr: "ansible_facts.controller_groups"
+    optional_attr: "ansible_facts.controller_groups_{{ env }}"
+    role_name: "infra.aap_configuration.controller_host_groups"
   - name: controller_organizations
     directory: "controller/controller_organizations"
     default_attr: "ansible_facts.aap_organizations"
     optional_attr: "ansible_facts.aap_organization_{{ env }}"
     role_name: "infra.aap_configuration.controller_organizations"
+  - name: gateway_organizations
+    directory: "gateway/gateway_organizations"
+    default_attr: "ansible_facts.aap_organizations"
+    optional_attr: "ansible_facts.aap_organization_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_organizations"

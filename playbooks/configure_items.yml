@@ -12,8 +12,6 @@
 - name: Include vars from configs directory | {{ __configure_aap_dir }}
   ansible.builtin.include_vars:
     file: "{{ config }}"
-    ignore_files:
-      - '*.template'
   loop: "{{ configs['files'] | map(attribute='path') }}"
   loop_control:
     loop_var: config
