@@ -1,18 +1,18 @@
 ---
-- name: Configure Ansible Automation Platform | controller_hosts
+- name: Configure Ansible Automation Platform | controller_roles
   hosts: "{{ env | default('dev') }}"
   connection: local
   gather_facts: false
 
   pre_tasks:
-    - name: Include vars from vault | controller_hosts
+    - name: Include vars from vault | controller_roles
       ansible.builtin.include_vars:
         file: "../vaults/{{ env }}.yml"
       tags:
         - always
 
   tasks:
-    - name: Collect configurations | controller_hosts
+    - name: Collect configurations | controller_roles
       ansible.builtin.include_tasks:
         file: "configure_items.yml"
       vars:
@@ -22,16 +22,16 @@
         __configure_var_env_name: "{{ item['optional_attr'] }}"
       loop: "{{ configuration_items }}"
       when:
-        - item['name'] == 'controller_hosts'
+        - item['name'] == 'controller_roles'
       tags:
         - always
 
-    - name: INCLUDE_ROLE | infra.aap_configuration.controller_hosts
+    - name: INCLUDE_ROLE | infra.aap_configuration.controller_roles
       ansible.builtin.include_role:
-        name: infra.aap_configuration.controller_hosts
+        name: infra.aap_configuration.controller_roles
       when:
-        - controller_hosts is defined
-        - controller_hosts | length > 0
+        - controller_roles is defined
+        - controller_roles| length > 0
       tags:
         - always
 ...

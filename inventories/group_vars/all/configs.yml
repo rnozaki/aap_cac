@@ -41,17 +41,27 @@ configuration_items:
     default_attr: "ansible_facts.controller_workflows"
     optional_attr: "ansible_facts.controller_workflows_{{ env }}"
     role_name: "infra.aap_configuration.controller_workflow_job_templates"
+  - name: controller_labels
+    directory: "controller/controller_labels"
+    default_attr: "ansible_facts.controller_labels"
+    optional_attr: "ansible_facts.controller_labels_{{ env }}"
+    role_name: "infra.aap_configuration.controller_labels"
   - name: controller_roles
     directory: "controller/controller_roles"
     default_attr: "ansible_facts.controller_roles"
     optional_attr: "ansible_facts.controller_roles_{{ env }}"
     role_name: "infra.aap_configuration.controller_roles"
+  - name: controller_notifications
+    directory: "controller/controller_notification_templates"
+    default_attr: "ansible_facts.controller_notifications"
+    optional_attr: "ansible_facts.controller_notifications_{{ env }}"
+    role_name: "infra.aap_configuration.controller_notification_templates"
   - name: controller_schedules
     directory: "controller/controller_schedules"
     default_attr: "ansible_facts.controller_schedules"
     optional_attr: "ansible_facts.controller_schedules_{{ env }}"
     role_name: "infra.aap_configuration.controller_schedules"
-  - name: controller_organizations
+  - name: aap_organizations
     directory: "controller/controller_organizations"
     default_attr: "ansible_facts.aap_organizations"
     optional_attr: "ansible_facts.aap_organization_{{ env }}"
