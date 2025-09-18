@@ -1,0 +1,4 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_teams
+aap_teams: []
+...

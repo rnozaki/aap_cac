@@ -1,16 +1,76 @@
 ---
 configs_directory: "../configs"
-configuration_items:
+
+gateway_configuration_items:
+  - name: gateway_settings
+    directory: "gateway/gateway_settings"
+    default_attr: "ansible_facts.gateway_settings"
+    optional_attr: "ansible_facts.gateway_settings_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_settings"
+  - name: gateway_organizations
+    directory: "gateway/gateway_organizations"
+    default_attr: "ansible_facts.aap_organizations"
+    optional_attr: "ansible_facts.aap_organization_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_organizations"
+  - name: aap_teams
+    directory: "gateway/gateway_teams"
+    default_attr: "ansible_facts.aap_teams"
+    optional_attr: "ansible_facts.aap_teams_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_teams"
+
+hub_configuration_items: []
+
+controller_configuration_items:
+  - name: controller_settings
+    directory: "controller/controller_settings"
+    default_attr: "ansible_facts.controller_settings"
+    optional_attr: "ansible_facts.controller_settings_{{ env }}"
+    role_name: "infra.aap_configuration.controller_settings"
+  - name: controller_instances
+    directory: "controller/controller_instances"
+    default_attr: "ansible_facts.controller_instances"
+    optional_attr: "ansible_facts.controller_instances_{{ env }}"
+    role_name: "infra.aap_configuration.controller_instances"
+  - name: controller_instance_groups
+    directory: "controller/controller_instance_groups"
+    default_attr: "ansible_facts.controller_instance_groups"
+    optional_attr: "ansible_facts.controller_instance_groups_{{ env }}"
+    role_name: "infra.aap_configuration.controller_instance_groups"
+  - name: controller_labels
+    directory: "controller/controller_labels"
+    default_attr: "ansible_facts.controller_labels"
+    optional_attr: "ansible_facts.controller_labels_{{ env }}"
+    role_name: "infra.aap_configuration.controller_labels"
   - name: controller_credentials
     directory: "controller/controller_credentials"
     default_attr: "ansible_facts.controller_credentials"
     optional_attr: "ansible_facts.controller_credentials_{{ env }}"
     role_name: "infra.aap_configuration.controller_credentials"
+  - name: controller_execution_environments
+    directory: "controller/controller_execution_environments"
+    default_attr: "ansible_facts.controller_execution_environments"
+    optional_attr: "ansible_facts.controller_execution_environments_{{ env }}"
+    role_name: "infra.aap_configuration.controller_execution_environments"
+  - name: controller_notifications
+    directory: "controller/controller_notification_templates"
+    default_attr: "ansible_facts.controller_notifications"
+    optional_attr: "ansible_facts.controller_notifications_{{ env }}"
+    role_name: "infra.aap_configuration.controller_notification_templates"
   - name: controller_projects
     directory: "controller/controller_projects"
     default_attr: "ansible_facts.controller_projects"
     optional_attr: "ansible_facts.controller_organization_{{ env }}"
     role_name: "infra.aap_configuration.controller_projects"
+  - name: controller_inventories
+    directory: "controller/controller_inventories"
+    default_attr: "ansible_facts.controller_inventories"
+    optional_attr: "ansible_facts.controller_inventories_{{ env }}"
+    role_name: "infra.aap_configuration.controller_inventories"
+  - name: controller_inventory_sources
+    directory: "controller/controller_inventory_sources"
+    default_attr: "ansible_facts.controller_inventory_sources"
+    optional_attr: "ansible_facts.controller_inventory_sources_{{ env }}"
+    role_name: "infra.aap_configuration.controller_inventory_sources"
   - name: controller_hosts
     directory: "controller/controller_hosts"
     default_attr: "ansible_facts.controller_hosts"
@@ -21,16 +81,6 @@ configuration_items:
     default_attr: "ansible_facts.controller_groups"
     optional_attr: "ansible_facts.controller_groups_{{ env }}"
     role_name: "infra.aap_configuration.controller_host_groups"
-  - name: controller_inventories
-    directory: "controller/controller_inventories"
-    default_attr: "ansible_facts.controller_inventories"
-    optional_attr: "ansible_facts.controller_inventories_{{ env }}"
-    role_name: "infra.aap_configuration.controller_inventories"
-  - name: controller_inventory_sources
-    directory: "controller/controller_inventory_sources"
-    default_attr: "ansible_facts.controller_inventory_sources"
-    optional_attr: "ansible_facts.controller_inventory_sources_{{ env }}"
-    role_name: "infra.aap_configuration.controller_inventory_sources" 
   - name: controller_job_templates
     directory: "controller/controller_job_templates"
     default_attr: "ansible_facts.controller_templates"
@@ -41,33 +91,22 @@ configuration_items:
     default_attr: "ansible_facts.controller_workflows"
     optional_attr: "ansible_facts.controller_workflows_{{ env }}"
     role_name: "infra.aap_configuration.controller_workflow_job_templates"
-  - name: controller_labels
-    directory: "controller/controller_labels"
-    default_attr: "ansible_facts.controller_labels"
-    optional_attr: "ansible_facts.controller_labels_{{ env }}"
-    role_name: "infra.aap_configuration.controller_labels"
-  - name: controller_roles
-    directory: "controller/controller_roles"
-    default_attr: "ansible_facts.controller_roles"
-    optional_attr: "ansible_facts.controller_roles_{{ env }}"
-    role_name: "infra.aap_configuration.controller_roles"
-  - name: controller_notifications
-    directory: "controller/controller_notification_templates"
-    default_attr: "ansible_facts.controller_notifications"
-    optional_attr: "ansible_facts.controller_notifications_{{ env }}"
-    role_name: "infra.aap_configuration.controller_notification_templates"
   - name: controller_schedules
     directory: "controller/controller_schedules"
     default_attr: "ansible_facts.controller_schedules"
     optional_attr: "ansible_facts.controller_schedules_{{ env }}"
     role_name: "infra.aap_configuration.controller_schedules"
-  - name: aap_organizations
-    directory: "controller/controller_organizations"
-    default_attr: "ansible_facts.aap_organizations"
-    optional_attr: "ansible_facts.aap_organization_{{ env }}"
-    role_name: "infra.aap_configuration.controller_organizations"
-  - name: gateway_organizations
-    directory: "gateway/gateway_organizations"
-    default_attr: "ansible_facts.aap_organizations"
-    optional_attr: "ansible_facts.aap_organization_{{ env }}"
-    role_name: "infra.aap_configuration.gateway_organizations"
+  - name: controller_roles
+    directory: "controller/controller_roles"
+    default_attr: "ansible_facts.controller_roles"
+    optional_attr: "ansible_facts.controller_roles_{{ env }}"
+    role_name: "infra.aap_configuration.controller_roles"
+
+eda_configuration_items: []
+
+configuration_items: >
+  {{ gateway_configuration_items
+   + hub_configuration_items
+   + controller_configuration_items
+   + eda_configuration_items }}
+...
