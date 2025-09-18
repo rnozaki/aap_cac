@@ -1,0 +1,8 @@
+---
+configs_directory: "../configs"
+configuration_items:
+  - name: controller_organizations
+    directory: "controller/controller_organizations"
+    default_attr: "ansible_facts.aap_organizations"
+    optional_attr: "ansible_facts.aap_organization_{{ env }}"
+    role_name: "infra.aap_configuration.controller_organizations"

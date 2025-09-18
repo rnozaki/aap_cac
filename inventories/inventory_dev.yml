@@ -1,0 +1,35 @@
+---
+all:
+  children:
+    dev:
+      hosts:
+        127.0.0.1: # Due to the way this template is configured, DO NOT CHANGE THIS!
+      vars:
+        connection: local
+    automationgateway:
+      hosts:
+        aap.local: # FQDN of Automation Gateway
+
+    automationcontroller:
+      hosts:
+        aap.local: # FQDN of Automation Controller host(s)
+
+    automationhub:
+      hosts:
+        aap.local: # FQDN of Automation Hub host(s). Can be commented out if not in use.
+
+    automationedacontroller:
+      hosts:
+        aap.local: # FQDN of Automation EDA Controller host(s)
+
+    builder:
+      hosts:
+        aap.local: # FQDN of builder host if you have one. Otherwise, can be Automation Hub host or commented out if not in use.
+
+    # Only needed if installing AAP with automation, can be removed if you are not. See Install docs if unsure what server should be the database host.
+    database:
+      hosts:
+        aap.local:
+  vars:
+    env: dev
+...
