@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/controller_roles
 controller_roles: []
+
+# Environment specific lists
+# controller_roles_dev: []
+# controller_roles_prod: []
+...

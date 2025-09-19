@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/controller_job_templates
 controller_templates: []
+
+# Environment specific lists
+# controller_templates_dev: []
+# controller_templates_prod: []
+...

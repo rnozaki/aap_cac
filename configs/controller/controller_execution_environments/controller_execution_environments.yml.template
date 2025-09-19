@@ -1,4 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/controller_execution_environments
 controller_execution_environments: []
+
+# Environment specific lists
+# controller_execution_environments_dev: []
+# controller_execution_environments_prod: []
 ...

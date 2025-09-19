@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/controller_hosts
 controller_hosts: []
+
+# Environment specific lists
+# controller_hosts_dev: []
+# controller_hosts_prod: []
+...
