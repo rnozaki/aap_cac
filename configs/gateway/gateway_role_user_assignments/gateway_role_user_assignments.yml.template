@@ -1,4 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_role_user_assignments
 gateway_role_user_assignments: []
+
+# Environment specific lists
+# gateway_role_user_assignments_dev: []
+# gateway_role_user_assignments_prod: []
 ...

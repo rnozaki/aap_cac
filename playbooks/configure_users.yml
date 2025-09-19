@@ -19,10 +19,10 @@
         __configure_aap_dir: "{{ item['directory'] }}"
         __configure_aap_setting: "{{ item['name'] }}"
         __configure_var_name: "{{ item['default_attr'] }}"
-        __configure_var_env_name: "{{ item['optional_attr'] }}"
+        __configure_var_env_name: "{{ item['env_attr'] }}"
       loop: "{{ configuration_items }}"
       when:
-        - item['name'] == 'aap_user_accounts'
+        - item['name'] == 'gateway_users'
       tags:
         - always
 

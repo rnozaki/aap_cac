@@ -1,4 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_users
 aap_user_accounts: []
+
+# Environment specific lists
+# aap_user_accounts_dev: []
+# aap_user_accounts_prod: []
 ...

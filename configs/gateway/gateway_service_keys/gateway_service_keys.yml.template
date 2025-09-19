@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_service_keys
 gateway_service_keys: []
+
+# Environment specific lists
+# gateway_service_keys_dev: []
+# gateway_service_keys_prod: []
+...

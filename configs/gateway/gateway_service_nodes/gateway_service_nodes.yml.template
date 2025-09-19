@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_service_nodes
 gateway_service_nodes: []
+
+# Environment specific lists
+# gateway_service_nodes_dev: []
+# gateway_service_nodes_prod: []
+...

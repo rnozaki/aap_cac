@@ -1,4 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_routes
 gateway_routes: []
+
+# Environment specific lists
+# gateway_routes_dev: []
+# gateway_routes_prod: []
 ...

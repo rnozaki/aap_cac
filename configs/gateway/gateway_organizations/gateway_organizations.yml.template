@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_organizations
 aap_organizations: []
+
+# Environment specific lists
+# aap_organizations_dev: []
+# aap_organizations_prod: []
+...

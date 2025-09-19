@@ -1,4 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_settings
 gateway_settings: []
+
+# Environment specific lists
+# gateway_settings_dev: []
+# gateway_settings_prod: []
 ...

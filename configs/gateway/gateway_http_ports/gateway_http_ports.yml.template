@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_http_ports
 gateway_http_ports: []
+
+# Environment specific lists
+# gateway_http_ports_dev: []
+# gateway_http_ports_prod: []
+...

@@ -1,3 +1,8 @@
 ---
 # https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_applications
 aap_applications: []
+
+# Environment specific lists
+# aap_applications_dev: []
+# aap_applications_prod: []
+...
