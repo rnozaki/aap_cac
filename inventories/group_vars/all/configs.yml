@@ -73,7 +73,33 @@ gateway_configuration_items:
     env_attr: "ansible_facts.gateway_routes_{{ env }}"
     role_name: "infra.aap_configuration.gateway_routes"
 
-hub_configuration_items: []
+hub_configuration_items:
+  - name: hub_namespace
+    directory: "hub/hub_namespace"
+    default_attr: "ansible_facts.hub_namespaces"
+    env_attr: "ansible_facts.hub_namespaces_{{ env }}"
+    role_name: "infra.aap_configuration.hub_namespace"
+  - name: hub_collection
+    directory: "hub/hub_collection"
+    default_attr: "ansible_facts.hub_collections"
+    env_attr: "ansible_facts.hub_collections_{{ env }}"
+    role_name: "infra.aap_configuration.hub_collection"
+  - name: hub_ee_registry
+    directory: "hub/hub_ee_registry"
+    default_attr: "ansible_facts.hub_ee_registries"
+    env_attr: "ansible_facts.hub_ee_registries_{{ env }}"
+    role_name: "infra.aap_configuration.hub_ee_registry"
+  - name: hub_ee_repository
+    directory: "hub/hub_ee_repository"
+    default_attr: "ansible_facts.hub_ee_repositories"
+    env_attr: "ansible_facts.hub_ee_repositories_{{ env }}"
+    role_name: "infra.aap_configuration.hub_ee_repository"
+  - name: hub_ee_repository
+    directory: "hub/hub_ee_repository"
+    default_attr: "ansible_facts.hub_ee_repositories"
+    env_attr: "ansible_facts.hub_ee_repositories_{{ env }}"
+    role_name: "infra.aap_configuration.hub_ee_repository"
+
 
 controller_configuration_items:
   - name: controller_settings

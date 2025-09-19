@@ -1,0 +1,8 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/hub_namespace
+hub_namespaces: []
+
+# Environment specific lists
+# hub_namespaces_dev: []
+# hub_namespaces_prod: []
+...

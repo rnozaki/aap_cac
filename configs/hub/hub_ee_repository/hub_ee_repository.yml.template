@@ -1,0 +1,8 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/hub_ee_repository
+hub_ee_repositories: []
+
+# Environment specific lists
+# hub_ee_repositories_dev: []
+# hub_ee_repositories_prod: []
+...

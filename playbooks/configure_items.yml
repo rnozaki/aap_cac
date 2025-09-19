@@ -24,5 +24,3 @@
 - name: Append the optional env values
   ansible.builtin.set_fact:
     "{{ __configure_aap_setting }}": "{{ lookup('ansible.builtin.vars', __configure_aap_setting) + (included_configs['results'] | map(attribute=__configure_var_env_name, default=[]) | flatten) }}"
-
-
