@@ -99,7 +99,11 @@ hub_configuration_items:
     default_attr: "ansible_facts.hub_ee_repositories"
     env_attr: "ansible_facts.hub_ee_repositories_{{ env }}"
     role_name: "infra.aap_configuration.hub_ee_repository"
-
+  - name: hub_ee_image
+    directory: "hub/hub_ee_image"
+    default_attr: "ansible_facts.hub_ee_images"
+    env_attr: "ansible_facts.hub_ee_images_{{ env }}"
+    role_name: "infra.aap_configuration.hub_ee_image"
 
 controller_configuration_items:
   - name: controller_settings
