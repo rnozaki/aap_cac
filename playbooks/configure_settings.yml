@@ -27,21 +27,21 @@
       tags:
         - always
 
-    - name: INCLUDE_ROLE | infra.aap_configuration.controller_settings
-      ansible.builtin.include_role:
-        name: infra.aap_configuration.controller_settings
-      when:
-        - controller_settings is defined
-        - controller_settings | length > 0
-      tags:
-        - always
-
     - name: INCLUDE_ROLE | infra.aap_configuration.gateway_settings
       ansible.builtin.include_role:
         name: infra.aap_configuration.gateway_settings
       when:
         - gateway_settings is defined
         - gateway_settings | length > 0
+      tags:
+        - always
+
+    - name: INCLUDE_ROLE | infra.aap_configuration.controller_settings
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.controller_settings
+      when:
+        - controller_settings is defined
+        - controller_settings | length > 0
       tags:
         - always
 ...

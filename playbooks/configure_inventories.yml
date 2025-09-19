@@ -22,7 +22,7 @@
         __configure_var_env_name: "{{ item['optional_attr'] }}"
       loop: "{{ configuration_items }}"
       when:
-        - item['name'] == 'controller_inventories' or 
+        - item['name'] == 'controller_inventories' or
           item['name'] == 'controller_inventory_sources'
       tags:
         - always
@@ -35,7 +35,7 @@
         - controller_inventories | length > 0
       tags:
         - always
-    
+
     - name: INCLUDE_ROLE | infra.aap_configuration.controller_inventory_sources
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_inventory_sources
@@ -44,7 +44,7 @@
         - controller_inventory_sources | length > 0
       tags:
         - always
-    
+
     - name: INCLUDE_ROLE | infra.aap_configuration.controller_inventory_source_update
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_inventory_source_update

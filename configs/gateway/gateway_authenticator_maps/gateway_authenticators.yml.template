@@ -1,0 +1,3 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/gateway_authenticators
+gateway_authenticators: []

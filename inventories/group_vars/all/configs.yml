@@ -2,6 +2,16 @@
 configs_directory: "../configs"
 
 gateway_configuration_items:
+  - name: gateway_authenticators
+    directory: "gateway/gateway_authenticators"
+    default_attr: "ansible_facts.gateway_authenticators"
+    optional_attr: "ansible_facts.gateway_authenticators_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_authenticators"
+  - name: gateway_authenticator_maps
+    directory: "gateway/gateway_authenticator_maps"
+    default_attr: "ansible_facts.gateway_authenticator_maps"
+    optional_attr: "ansible_facts.gateway_authenticator_maps_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_authenticator_maps"
   - name: gateway_settings
     directory: "gateway/gateway_settings"
     default_attr: "ansible_facts.gateway_settings"
@@ -12,11 +22,56 @@ gateway_configuration_items:
     default_attr: "ansible_facts.aap_organizations"
     optional_attr: "ansible_facts.aap_organization_{{ env }}"
     role_name: "infra.aap_configuration.gateway_organizations"
+  - name: aap_applications
+    directory: "gateway/gateway_applications"
+    default_attr: "ansible_facts.aap_applications"
+    optional_attr: "ansible_facts.aap_applications_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_applications"
+  - name: gateway_http_ports
+    directory: "gateway/gateway_http_ports"
+    default_attr: "ansible_facts.gateway_http_ports"
+    optional_attr: "ansible_facts.gateway_http_ports_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_http_ports"
+  - name: gateway_service_clusters
+    directory: "gateway/gateway_service_clusters"
+    default_attr: "ansible_facts.gateway_service_clusters"
+    optional_attr: "ansible_facts.gateway_service_clusters_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_service_clusters"
+  - name: gateway_service_keys
+    directory: "gateway/gateway_service_keys"
+    default_attr: "ansible_facts.gateway_service_keys"
+    optional_attr: "ansible_facts.gateway_service_keys_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_service_keys"
+  - name: gateway_service_nodes
+    directory: "gateway/gateway_service_nodes"
+    default_attr: "ansible_facts.gateway_service_nodes"
+    optional_attr: "ansible_facts.gateway_service_nodes_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_service_nodes"
+  - name: gateway_services
+    directory: "gateway/gateway_services"
+    default_attr: "ansible_facts.gateway_services"
+    optional_attr: "ansible_facts.gateway_services_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_services"
   - name: aap_teams
     directory: "gateway/gateway_teams"
     default_attr: "ansible_facts.aap_teams"
     optional_attr: "ansible_facts.aap_teams_{{ env }}"
     role_name: "infra.aap_configuration.gateway_teams"
+  - name: aap_user_accounts
+    directory: "gateway/gateway_users"
+    default_attr: "ansible_facts.aap_user_accounts"
+    optional_attr: "ansible_facts.aap_user_accounts_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_users"
+  - name: gateway_role_user_assignments
+    directory: "gateway/gateway_role_user_assignments"
+    default_attr: "ansible_facts.gateway_role_user_assignments"
+    optional_attr: "ansible_facts.gateway_role_user_assignments_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_role_user_assignments"
+  - name: gateway_routes
+    directory: "gateway/gateway_routes"
+    default_attr: "ansible_facts.gateway_routes"
+    optional_attr: "ansible_facts.gateway_routes_{{ env }}"
+    role_name: "infra.aap_configuration.gateway_routes"
 
 hub_configuration_items: []
 

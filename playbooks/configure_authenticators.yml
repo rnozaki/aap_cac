@@ -1,0 +1,47 @@
+---
+- name: Configure Ansible Automation Platform | gateway_authenticators & gateway_authenticator_maps
+  hosts: "{{ env | default('dev') }}"
+  connection: local
+  gather_facts: false
+
+  pre_tasks:
+    - name: Include vars from vault | gateway_authenticators & gateway_authenticator_maps
+      ansible.builtin.include_vars:
+        file: "../vaults/{{ env }}.yml"
+      tags:
+        - always
+
+  tasks:
+    - name: Collect configurations | gateway_authenticators & gateway_authenticator_maps
+      ansible.builtin.include_tasks:
+        file: "configure_items.yml"
+      vars:
+        __configure_aap_dir: "{{ item['directory'] }}"
+        __configure_aap_setting: "{{ item['name'] }}"
+        __configure_var_name: "{{ item['default_attr'] }}"
+        __configure_var_env_name: "{{ item['optional_attr'] }}"
+      loop: "{{ configuration_items }}"
+      when:
+        - item['name'] == 'gateway_authenticators' or
+          item['name'] == 'gateway_authenticator_maps'
+      tags:
+        - always
+
+    - name: INCLUDE_ROLE | infra.aap_configuration.gateway_authenticators
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.gateway_authenticators
+      when:
+        - gateway_authenticators is defined
+        - gateway_authenticators | length > 0
+      tags:
+        - always
+
+    - name: INCLUDE_ROLE | infra.aap_configuration.gateway_authenticator_maps
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.gateway_authenticator_maps
+      when:
+        - gateway_authenticator_maps is defined
+        - gateway_authenticator_maps | length > 0
+      tags:
+        - always
+...
