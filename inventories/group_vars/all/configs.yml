@@ -104,6 +104,16 @@ hub_configuration_items:
     default_attr: "ansible_facts.hub_ee_images"
     env_attr: "ansible_facts.hub_ee_images_{{ env }}"
     role_name: "infra.aap_configuration.hub_ee_image"
+  - name: hub_collection_remote
+    directory: "hub/hub_collection_remote"
+    default_attr: "ansible_facts.hub_collection_remotes"
+    env_attr: "ansible_facts.hub_collection_remotes_{{ env }}"
+    role_name: "infra.aap_configuration.hub_collection_remote"
+  - name: hub_collection_repository
+    directory: "hub/hub_collection_repository"
+    default_attr: "ansible_facts.hub_collection_repositories"
+    env_attr: "ansible_facts.hub_collection_repositories_{{ env }}"
+    role_name: "infra.aap_configuration.hub_collection_repository"
 
 controller_configuration_items:
   - name: controller_settings
@@ -207,7 +217,42 @@ controller_configuration_items:
     env_attr: "ansible_facts.controller_roles_{{ env }}"
     role_name: "infra.aap_configuration.controller_roles"
 
-eda_configuration_items: []
+eda_configuration_items:
+  - name: eda_credential_types
+    directory: "eda/eda_credential_types"
+    default_attr: "ansible_facts.eda_credential_types"
+    env_attr: "ansible_facts.eda_credential_types_{{ env }}"
+    role_name: "infra.aap_configuration.eda_credential_types"
+  - name: eda_credentials
+    directory: "eda/eda_credentials"
+    default_attr: "ansible_facts.eda_credentials"
+    env_attr: "ansible_facts.eda_credentials_{{ env }}"
+    role_name: "infra.aap_configuration.eda_credentials"
+  - name: eda_controller_tokens
+    directory: "eda/eda_controller_tokens"
+    default_attr: "ansible_facts.eda_controller_tokens"
+    env_attr: "ansible_facts.eda_controller_tokens_{{ env }}"
+    role_name: "infra.aap_configuration.eda_controller_tokens"
+  - name: eda_projects
+    directory: "eda/eda_projects"
+    default_attr: "ansible_facts.eda_projects"
+    env_attr: "ansible_facts.eda_projects_{{ env }}"
+    role_name: "infra.aap_configuration.eda_projects"
+  - name: eda_event_streams
+    directory: "eda/eda_event_streams"
+    default_attr: "ansible_facts.eda_event_streams"
+    env_attr: "ansible_facts.eda_event_streams_{{ env }}"
+    role_name: "infra.aap_configuration.eda_event_streams"
+  - name: eda_decision_environments
+    directory: "eda/eda_decision_environments"
+    default_attr: "ansible_facts.eda_decision_environments"
+    env_attr: "ansible_facts.eda_decision_environments_{{ env }}"
+    role_name: "infra.aap_configuration.eda_decision_environments"
+  - name: eda_rulebook_activations
+    directory: "eda/eda_rulebook_activations"
+    default_attr: "ansible_facts.eda_rulebook_activations"
+    env_attr: "ansible_facts.eda_rulebook_activations_{{ env }}"
+    role_name: "infra.aap_configuration.eda_rulebook_activations"
 
 configuration_items: >
   {{ gateway_configuration_items

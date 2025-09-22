@@ -1,0 +1,8 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/eda_rulebook_activations
+eda_rulebook_activations: []
+
+# Environment specific lists
+# eda_rulebook_activations_dev: []
+# eda_rulebook_activations_prod: []
+...

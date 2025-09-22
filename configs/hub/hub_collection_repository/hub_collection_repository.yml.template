@@ -1,0 +1,8 @@
+---
+# https://github.com/redhat-cop/infra.aap_configuration/tree/devel/roles/hub_collection_repository
+hub_collection_repositories: []
+
+# Environment specific lists
+# hub_collection_repositories_dev: []
+# hub_collection_repositories_prod: []
+...
