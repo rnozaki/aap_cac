@@ -1,7 +1,7 @@
 ---
 configs_directory: "../configs"
 
-# Configuration Rules
+# Configuration Controller Rules
 config_controller_applications: true
 config_controller_bulk_hosts: true
 config_controller_credential_input_sources: true
@@ -22,6 +22,8 @@ config_controller_roles: true
 config_controller_schedules: true
 config_controller_settings: true
 config_controller_workflow_job_templates: true
+
+# Configuration EDA Rules
 config_eda_credential_types: true
 config_eda_credentials: true
 config_eda_controller_tokens: true
@@ -29,6 +31,8 @@ config_eda_projects: true
 config_eda_event_streams: true
 config_eda_decision_environments: true
 config_eda_rulebook_activations: true
+
+# Configuration Gateway Rules
 config_gateway_applications: true
 config_gateway_authenticator_maps: true
 config_gateway_authenticators: true
@@ -43,6 +47,8 @@ config_gateway_services: true
 config_gateway_settings: true
 config_gateway_teams: true
 config_gateway_users: true
+
+# Configuration Hub Rules
 config_hub_namespaces: true
 config_hub_collections: true
 config_hub_ee_registries: true
