@@ -22,6 +22,165 @@
         - never
         - dispatch
     
+    - name: INCLUDE_TASK | configure_gateway_authenticators.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_authenticators.yml
+        apply: 
+          tags: 
+            - gateway_authenticators
+            - gateway_authenticator_maps
+      when: 
+        - config_gateway_authenticators
+        - config_gateway_authenticator_maps
+      tags:
+        - never
+        - gateway_authenticators
+        - gateway_authenticator_maps
+
+    - name: INCLUDE_TASK | configure_gateway_settings.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_settings.yml
+        apply: 
+          tags: 
+            - gateway_settings
+      when: 
+        - config_gateway_settings
+      tags:
+        - never
+        - gateway_settings
+    
+    - name: INCLUDE_TASK | configure_gateway_organizations.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_organizations.yml
+        apply: 
+          tags: 
+            - gateway_organizations
+      when: 
+        - config_gateway_organizations
+      tags:
+        - never
+        - gateway_organizations
+
+    - name: INCLUDE_TASK | configure_gateway_applications.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_applications.yml
+        apply: 
+          tags: 
+            - gateway_applications
+      when: 
+        - config_gateway_applications
+      tags:
+        - never
+        - gateway_applications
+
+    - name: INCLUDE_TASK | configure_gateway_http_ports.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_http_ports.yml
+        apply: 
+          tags: 
+            - gateway_http_ports
+      when: 
+        - config_gateway_http_ports
+      tags:
+        - never
+        - gateway_http_ports
+
+    - name: INCLUDE_TASK | configure_gateway_service_clusters.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_service_clusters.yml
+        apply: 
+          tags: 
+            - gateway_service_clusters
+      when: 
+        - config_gateway_service_clusters
+      tags:
+        - never
+        - gateway_service_clusters
+
+    - name: INCLUDE_TASK | configure_gateway_service_keys.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_service_keys.yml
+        apply: 
+          tags: 
+            - gateway_service_keys
+      when: 
+        - config_gateway_service_keys
+      tags:
+        - never
+        - gateway_service_keys
+
+    - name: INCLUDE_TASK | configure_gateway_service_nodes.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_service_nodes.yml
+        apply: 
+          tags: 
+            - gateway_service_nodes
+      when: 
+        - config_gateway_service_nodes
+      tags:
+        - never
+        - gateway_service_nodes
+
+    - name: INCLUDE_TASK | configure_gateway_services.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_services.yml
+        apply: 
+          tags: 
+            - gateway_services
+      when: 
+        - config_gateway_services
+      tags:
+        - never
+        - gateway_services
+
+    - name: INCLUDE_TASK | configure_gateway_teams.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_teams.yml
+        apply: 
+          tags: 
+            - gateway_teams
+      when: 
+        - config_gateway_teams
+      tags:
+        - never
+        - gateway_teams
+
+    - name: INCLUDE_TASK | configure_gateway_users.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_users.yml
+        apply: 
+          tags: 
+            - gateway_users
+      when: 
+        - config_gateway_users
+      tags:
+        - never
+        - gateway_users
+
+    - name: INCLUDE_TASK | configure_gateway_role_user_assignments.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_role_user_assignments.yml
+        apply: 
+          tags: 
+            - gateway_role_user_assignments
+      when: 
+        - config_gateway_role_user_assignments
+      tags:
+        - never
+        - gateway_role_user_assignments
+
+    - name: INCLUDE_TASK | configure_gateway_routes.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_routes.yml
+        apply: 
+          tags: 
+            - gateway_routes
+      when: 
+        - config_gateway_routes
+      tags:
+        - never
+        - gateway_routes
+
     - name: INCLUDE_TASK | configure_controller_settings.yml
       ansible.builtin.include_tasks:
         file: configure_controller_settings.yml
@@ -244,163 +403,89 @@
         - never
         - controller_roles
     
-    - name: INCLUDE_TASK | configure_gateway_authenticators.yml
+    - name: INCLUDE_TASK | configure_eda_credential_types.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_authenticators.yml
+        file: configure_eda_credential_types.yml
         apply: 
           tags: 
-            - gateway_authenticators
-            - gateway_authenticator_maps
+            - eda_credential_types
       when: 
-        - config_gateway_authenticators
-        - config_gateway_authenticator_maps
+        - config_eda_credential_types
       tags:
         - never
-        - gateway_authenticators
-        - gateway_authenticator_maps
-
-    - name: INCLUDE_TASK | configure_gateway_settings.yml
-      ansible.builtin.include_tasks:
-        file: configure_gateway_settings.yml
-        apply: 
-          tags: 
-            - gateway_settings
-      when: 
-        - config_gateway_settings
-      tags:
-        - never
-        - gateway_settings
+        - eda_credential_types
     
-    - name: INCLUDE_TASK | configure_gateway_organizations.yml
+    - name: INCLUDE_TASK | configure_eda_credentials.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_organizations.yml
+        file: configure_eda_credentials.yml
         apply: 
           tags: 
-            - gateway_organizations
+            - eda_credentials
       when: 
-        - config_gateway_organizations
+        - config_eda_credentials
       tags:
         - never
-        - gateway_organizations
+        - eda_credentials
 
-    - name: INCLUDE_TASK | configure_gateway_applications.yml
+    - name: INCLUDE_TASK | configure_eda_controller_tokens.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_applications.yml
+        file: configure_eda_controller_tokens.yml
         apply: 
           tags: 
-            - gateway_applications
+            - eda_controller_tokens
       when: 
-        - config_gateway_applications
+        - config_eda_controller_tokens
       tags:
         - never
-        - gateway_applications
-
-    - name: INCLUDE_TASK | configure_gateway_http_ports.yml
+        - eda_controller_tokens
+        
+    - name: INCLUDE_TASK | configure_eda_projects.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_http_ports.yml
+        file: configure_eda_projects.yml
         apply: 
           tags: 
-            - gateway_http_ports
+            - eda_projects
       when: 
-        - config_gateway_http_ports
+        - config_eda_projects
       tags:
         - never
-        - gateway_http_ports
+        - eda_projects
 
-    - name: INCLUDE_TASK | configure_gateway_service_clusters.yml
+    - name: INCLUDE_TASK | configure_eda_event_streams.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_service_clusters.yml
+        file: configure_eda_event_streams.yml
         apply: 
           tags: 
-            - gateway_service_clusters
+            - eda_event_streams
       when: 
-        - config_gateway_service_clusters
+        - config_eda_event_streams
       tags:
         - never
-        - gateway_service_clusters
-
-    - name: INCLUDE_TASK | configure_gateway_service_keys.yml
+        - eda_event_streams
+    
+    - name: INCLUDE_TASK | configure_eda_decision_environments.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_service_keys.yml
+        file: configure_eda_decision_environments.yml
         apply: 
           tags: 
-            - gateway_service_keys
+            - eda_decision_environments
       when: 
-        - config_gateway_service_keys
+        - config_eda_decision_environments
       tags:
         - never
-        - gateway_service_keys
-
-    - name: INCLUDE_TASK | configure_gateway_service_nodes.yml
+        - eda_decision_environments
+    
+    - name: INCLUDE_TASK | configure_eda_rulebook_activations.yml
       ansible.builtin.include_tasks:
-        file: configure_gateway_service_nodes.yml
+        file: configure_eda_rulebook_activations.yml
         apply: 
           tags: 
-            - gateway_service_nodes
+            - eda_rulebook_activations
       when: 
-        - config_gateway_service_nodes
+        - config_eda_rulebook_activations
       tags:
         - never
-        - gateway_service_nodes
-
-    - name: INCLUDE_TASK | configure_gateway_services.yml
-      ansible.builtin.include_tasks:
-        file: configure_gateway_services.yml
-        apply: 
-          tags: 
-            - gateway_services
-      when: 
-        - config_gateway_services
-      tags:
-        - never
-        - gateway_services
-
-    - name: INCLUDE_TASK | configure_gateway_teams.yml
-      ansible.builtin.include_tasks:
-        file: configure_gateway_teams.yml
-        apply: 
-          tags: 
-            - gateway_teams
-      when: 
-        - config_gateway_teams
-      tags:
-        - never
-        - gateway_teams
-
-    - name: INCLUDE_TASK | configure_gateway_users.yml
-      ansible.builtin.include_tasks:
-        file: configure_gateway_users.yml
-        apply: 
-          tags: 
-            - gateway_users
-      when: 
-        - config_gateway_users
-      tags:
-        - never
-        - gateway_users
-
-    - name: INCLUDE_TASK | configure_gateway_role_user_assignments.yml
-      ansible.builtin.include_tasks:
-        file: configure_gateway_role_user_assignments.yml
-        apply: 
-          tags: 
-            - gateway_role_user_assignments
-      when: 
-        - config_gateway_role_user_assignments
-      tags:
-        - never
-        - gateway_role_user_assignments
-
-    - name: INCLUDE_TASK | configure_gateway_routes.yml
-      ansible.builtin.include_tasks:
-        file: configure_gateway_routes.yml
-        apply: 
-          tags: 
-            - gateway_routes
-      when: 
-        - config_gateway_routes
-      tags:
-        - never
-        - gateway_routes
-
+        - eda_rulebook_activations
+    
+    
 ...

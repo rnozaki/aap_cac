@@ -23,6 +23,15 @@ config_controller_schedules: true
 config_controller_settings: true
 config_controller_workflow_job_templates: true
 
+config_eda_credential_types: true
+config_eda_credentials: true
+config_eda_controller_tokens: true
+config_eda_projects: true
+config_eda_event_streams: true
+config_eda_decision_environments: true
+config_eda_rulebook_activations: true
+
+
 config_gateway_applications: true
 config_gateway_authenticator_maps: true
 config_gateway_authenticators: true
