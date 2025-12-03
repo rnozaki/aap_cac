@@ -244,4 +244,163 @@
         - never
         - controller_roles
     
+    - name: INCLUDE_TASK | configure_gateway_authenticators.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_authenticators.yml
+        apply: 
+          tags: 
+            - gateway_authenticators
+            - gateway_authenticator_maps
+      when: 
+        - config_gateway_authenticators
+        - config_gateway_authenticator_maps
+      tags:
+        - never
+        - gateway_authenticators
+        - gateway_authenticator_maps
+
+    - name: INCLUDE_TASK | configure_gateway_settings.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_settings.yml
+        apply: 
+          tags: 
+            - gateway_settings
+      when: 
+        - config_gateway_settings
+      tags:
+        - never
+        - gateway_settings
+    
+    - name: INCLUDE_TASK | configure_gateway_organizations.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_organizations.yml
+        apply: 
+          tags: 
+            - gateway_organizations
+      when: 
+        - config_gateway_organizations
+      tags:
+        - never
+        - gateway_organizations
+
+    - name: INCLUDE_TASK | configure_gateway_applications.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_applications.yml
+        apply: 
+          tags: 
+            - gateway_applications
+      when: 
+        - config_gateway_applications
+      tags:
+        - never
+        - gateway_applications
+
+    - name: INCLUDE_TASK | configure_gateway_http_ports.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_http_ports.yml
+        apply: 
+          tags: 
+            - gateway_http_ports
+      when: 
+        - config_gateway_http_ports
+      tags:
+        - never
+        - gateway_http_ports
+
+    - name: INCLUDE_TASK | configure_gateway_service_clusters.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_service_clusters.yml
+        apply: 
+          tags: 
+            - gateway_service_clusters
+      when: 
+        - config_gateway_service_clusters
+      tags:
+        - never
+        - gateway_service_clusters
+
+    - name: INCLUDE_TASK | configure_gateway_service_keys.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_service_keys.yml
+        apply: 
+          tags: 
+            - gateway_service_keys
+      when: 
+        - config_gateway_service_keys
+      tags:
+        - never
+        - gateway_service_keys
+
+    - name: INCLUDE_TASK | configure_gateway_service_nodes.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_service_nodes.yml
+        apply: 
+          tags: 
+            - gateway_service_nodes
+      when: 
+        - config_gateway_service_nodes
+      tags:
+        - never
+        - gateway_service_nodes
+
+    - name: INCLUDE_TASK | configure_gateway_services.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_services.yml
+        apply: 
+          tags: 
+            - gateway_services
+      when: 
+        - config_gateway_services
+      tags:
+        - never
+        - gateway_services
+
+    - name: INCLUDE_TASK | configure_gateway_teams.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_teams.yml
+        apply: 
+          tags: 
+            - gateway_teams
+      when: 
+        - config_gateway_teams
+      tags:
+        - never
+        - gateway_teams
+
+    - name: INCLUDE_TASK | configure_gateway_users.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_users.yml
+        apply: 
+          tags: 
+            - gateway_users
+      when: 
+        - config_gateway_users
+      tags:
+        - never
+        - gateway_users
+
+    - name: INCLUDE_TASK | configure_gateway_role_user_assignments.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_role_user_assignments.yml
+        apply: 
+          tags: 
+            - gateway_role_user_assignments
+      when: 
+        - config_gateway_role_user_assignments
+      tags:
+        - never
+        - gateway_role_user_assignments
+
+    - name: INCLUDE_TASK | configure_gateway_routes.yml
+      ansible.builtin.include_tasks:
+        file: configure_gateway_routes.yml
+        apply: 
+          tags: 
+            - gateway_routes
+      when: 
+        - config_gateway_routes
+      tags:
+        - never
+        - gateway_routes
+
 ...

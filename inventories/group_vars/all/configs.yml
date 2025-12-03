@@ -23,6 +23,22 @@ config_controller_schedules: true
 config_controller_settings: true
 config_controller_workflow_job_templates: true
 
+config_gateway_applications: true
+config_gateway_authenticator_maps: true
+config_gateway_authenticators: true
+config_gateway_http_ports: true
+config_gateway_organizations: true
+config_gateway_role_user_assignments: true
+config_gateway_routes: true
+config_gateway_service_clusters: true
+config_gateway_service_keys: true
+config_gateway_service_nodes: true
+config_gateway_services: true
+config_gateway_settings: true
+config_gateway_teams: true
+config_gateway_users: true
+
+
 gateway_configuration_items:
   - name: gateway_authenticators
     directory: "gateway/gateway_authenticators"
@@ -39,7 +55,7 @@ gateway_configuration_items:
     default_attr: "ansible_facts.gateway_settings"
     env_attr: "ansible_facts.gateway_settings_{{ env }}"
     role_name: "infra.aap_configuration.gateway_settings"
-  - name: gateway_organizations
+  - name: aap_organizations
     directory: "gateway/gateway_organizations"
     default_attr: "ansible_facts.aap_organizations"
     env_attr: "ansible_facts.aap_organizations_{{ env }}"
@@ -74,12 +90,12 @@ gateway_configuration_items:
     default_attr: "ansible_facts.gateway_services"
     env_attr: "ansible_facts.gateway_services_{{ env }}"
     role_name: "infra.aap_configuration.gateway_services"
-  - name: gateway_teams
+  - name: aap_teams
     directory: "gateway/gateway_teams"
     default_attr: "ansible_facts.aap_teams"
     env_attr: "ansible_facts.aap_teams_{{ env }}"
     role_name: "infra.aap_configuration.gateway_teams"
-  - name: gateway_users
+  - name: aap_user_accounts
     directory: "gateway/gateway_users"
     default_attr: "ansible_facts.aap_user_accounts"
     env_attr: "ansible_facts.aap_user_accounts_{{ env }}"

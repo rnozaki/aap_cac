@@ -1,37 +1,20 @@
 ---
-- name: Configure Ansible Automation Platform | gateway_teams
-  hosts: "{{ env | default('dev') }}"
-  connection: local
-  gather_facts: false
+- name: Collect configurations | gateway_teams
+  ansible.builtin.include_tasks:
+    file: "configure_items.yml"
+  vars:
+    __configure_aap_dir: "{{ item['directory'] }}"
+    __configure_aap_setting: "{{ item['name'] }}"
+    __configure_var_name: "{{ item['default_attr'] }}"
+    __configure_var_env_name: "{{ item['env_attr'] }}"
+  loop: "{{ configuration_items }}"
+  when:
+    - item['name'] == 'aap_teams'
 
-  pre_tasks:
-    - name: Include vars from vault | gateway_teams
-      ansible.builtin.include_vars:
-        file: "../vaults/{{ env }}.yml"
-      tags:
-        - always
-
-  tasks:
-    - name: Collect configurations | gateway_teams
-      ansible.builtin.include_tasks:
-        file: "configure_items.yml"
-      vars:
-        __configure_aap_dir: "{{ item['directory'] }}"
-        __configure_aap_setting: "{{ item['name'] }}"
-        __configure_var_name: "{{ item['default_attr'] }}"
-        __configure_var_env_name: "{{ item['env_attr'] }}"
-      loop: "{{ configuration_items }}"
-      when:
-        - item['name'] == 'gateway_teams'
-      tags:
-        - always
-
-    - name: INCLUDE_ROLE | infra.aap_configuration.gateway_teams
-      ansible.builtin.include_role:
-        name: infra.aap_configuration.gateway_teams
-      when:
-        - aap_teams is defined
-        - aap_teams | length > 0
-      tags:
-        - always
+- name: INCLUDE_ROLE | infra.aap_configuration.gateway_teams
+  ansible.builtin.include_role:
+    name: infra.aap_configuration.gateway_teams
+  when:
+    - aap_teams is defined
+    - aap_teams | length > 0
 ...
