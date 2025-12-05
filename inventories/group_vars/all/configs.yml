@@ -1,5 +1,12 @@
 ---
+# Configuration directory
 configs_directory: "../configs"
+
+# Configuration Rules
+config_controller: true
+config_eda: true
+config_gateway: true
+config_hub: true
 
 # Configuration Controller Rules
 config_controller_applications: true
@@ -57,7 +64,7 @@ config_hub_ee_images: true
 config_hub_collection_remotes: true
 config_hub_collection_repositories: true
 
-# Configuration Items
+# Gateway Configuration Items
 gateway_configuration_items:
   - name: gateway_authenticators
     directory: "gateway/gateway_authenticators"
@@ -130,6 +137,7 @@ gateway_configuration_items:
     env_attr: "ansible_facts.gateway_routes_{{ env }}"
     role_name: "infra.aap_configuration.gateway_routes"
 
+# Hub Configuration Items
 hub_configuration_items:
   - name: hub_namespaces
     directory: "hub/hub_namespace"
@@ -167,6 +175,7 @@ hub_configuration_items:
     env_attr: "ansible_facts.hub_collection_repositories_{{ env }}"
     role_name: "infra.aap_configuration.hub_collection_repository"
 
+# Controller Configuration Items
 controller_configuration_items:
   - name: controller_settings
     directory: "controller/controller_settings"
@@ -269,6 +278,7 @@ controller_configuration_items:
     env_attr: "ansible_facts.controller_roles_{{ env }}"
     role_name: "infra.aap_configuration.controller_roles"
 
+# EDA Configuration Items
 eda_configuration_items:
   - name: eda_credential_types
     directory: "eda/eda_credential_types"
@@ -306,6 +316,7 @@ eda_configuration_items:
     env_attr: "ansible_facts.eda_rulebook_activations_{{ env }}"
     role_name: "infra.aap_configuration.eda_rulebook_activations"
 
+# Combined list of configuration items
 configuration_items: >
   {{ gateway_configuration_items
    + hub_configuration_items
