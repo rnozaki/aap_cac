@@ -9,7 +9,7 @@
     __configure_var_env_name: "{{ item['env_attr'] }}"
   loop: "{{ configuration_items }}"
   when:
-    - item['name'] == 'controller_workflow_job_templates'
+    - item['name'] == 'controller_workflows'
 
 - name: INCLUDE_ROLE | infra.aap_configuration.controller_workflow_job_templates
   ansible.builtin.include_role:

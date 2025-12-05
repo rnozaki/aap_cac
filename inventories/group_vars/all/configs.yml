@@ -247,7 +247,7 @@ controller_configuration_items:
     default_attr: "ansible_facts.controller_hosts"
     env_attr: "ansible_facts.controller_hosts_{{ env }}"
     role_name: "infra.aap_configuration.controller_hosts"
-  - name: controller_bulk_host_create
+  - name: controller_bulk_hosts
     directory: "controller/controller_bulk_host_create"
     default_attr: "ansible_facts.controller_bulk_hosts"
     env_attr: "ansible_facts.controller_bulk_hosts_{{ env }}"
@@ -262,7 +262,7 @@ controller_configuration_items:
     default_attr: "ansible_facts.controller_templates"
     env_attr: "ansible_facts.controller_templates_{{ env }}"
     role_name: "infra.aap_configuration.controller_job_templates"
-  - name: controller_workflow_job_templates
+  - name: controller_workflows
     directory: "controller/controller_workflow_job_templates"
     default_attr: "ansible_facts.controller_workflows"
     env_attr: "ansible_facts.controller_workflows_{{ env }}"

@@ -9,7 +9,7 @@
     __configure_var_env_name: "{{ item['env_attr'] }}"
   loop: "{{ configuration_items }}"
   when:
-    - item['name'] == 'controller_job_templates'
+    - item['name'] == 'controller_templates'
   tags:
     - always
 

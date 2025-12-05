@@ -33,6 +33,7 @@ controller_api_user_pass: ''
 # is Password1234!
 aap_user: admin
 aap_pass: redhat123
+# aap_token:
 
 # The admin password for the private Automation Hub; if unspecified, the default
 # is Password1234!

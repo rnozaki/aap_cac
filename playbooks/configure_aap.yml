@@ -15,16 +15,12 @@
     - name: INCLUDE_TASK | dispatch
       ansible.builtin.include_tasks:
         file: tasks/dispatch.yml
-        apply: 
-          tags: 
-            - dispatch
-      tags:
-        - never
-        - dispatch
 
     - name: Configure Gateway
       when:
         - config_gateway
+      tags:
+        - gateway
       block:      
         - name: INCLUDE_TASK | configure_gateway_authenticators.yml
           ansible.builtin.include_tasks:
@@ -188,6 +184,8 @@
     - name: Configure Hub
       when:
         - config_hub
+      tags:
+        - hub
       block: 
         - name: INCLUDE_TASK | configure_hub_namespaces.yml
           ansible.builtin.include_tasks:
@@ -264,6 +262,8 @@
     - name: Configure Controller
       when:
         - config_controller
+      tags:
+        - controller
       block: 
         - name: INCLUDE_TASK | configure_controller_settings.yml
           ansible.builtin.include_tasks:
@@ -489,7 +489,9 @@
     
     - name: Configure EDA
       when:
-        - config_EDA
+        - config_eda
+      tags:
+        - eda
       block: 
         - name: INCLUDE_TASK | configure_eda_credential_types.yml
           ansible.builtin.include_tasks:

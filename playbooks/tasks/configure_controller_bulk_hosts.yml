@@ -9,7 +9,7 @@
     __configure_var_env_name: "{{ item['env_attr'] }}"
   loop: "{{ configuration_items }}"
   when:
-    - item['name'] == 'controller_bulk_host_create'
+    - item['name'] == 'controller_bulk_hosts'
 
 - name: INCLUDE_ROLE | infra.aap_configuration.controller_bulk_hosts_create
   ansible.builtin.include_role:
