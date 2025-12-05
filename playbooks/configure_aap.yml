@@ -14,7 +14,7 @@
   tasks:
     - name: INCLUDE_TASK | dispatch
       ansible.builtin.include_tasks:
-        file: dispatch.yml
+        file: tasks/dispatch.yml
         apply: 
           tags: 
             - dispatch
@@ -28,7 +28,7 @@
       block:      
         - name: INCLUDE_TASK | configure_gateway_authenticators.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_authenticators.yml
+            file: tasks/configure_gateway_authenticators.yml
             apply: 
               tags: 
                 - gateway_authenticators
@@ -43,7 +43,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_settings.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_settings.yml
+            file: tasks/configure_gateway_settings.yml
             apply: 
               tags: 
                 - gateway_settings
@@ -55,7 +55,7 @@
         
         - name: INCLUDE_TASK | configure_gateway_organizations.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_organizations.yml
+            file: tasks/configure_gateway_organizations.yml
             apply: 
               tags: 
                 - gateway_organizations
@@ -67,7 +67,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_applications.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_applications.yml
+            file: tasks/configure_gateway_applications.yml
             apply: 
               tags: 
                 - gateway_applications
@@ -79,7 +79,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_http_ports.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_http_ports.yml
+            file: tasks/configure_gateway_http_ports.yml
             apply: 
               tags: 
                 - gateway_http_ports
@@ -91,7 +91,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_service_clusters.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_service_clusters.yml
+            file: tasks/configure_gateway_service_clusters.yml
             apply: 
               tags: 
                 - gateway_service_clusters
@@ -103,7 +103,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_service_keys.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_service_keys.yml
+            file: tasks/configure_gateway_service_keys.yml
             apply: 
               tags: 
                 - gateway_service_keys
@@ -115,7 +115,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_service_nodes.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_service_nodes.yml
+            file: tasks/configure_gateway_service_nodes.yml
             apply: 
               tags: 
                 - gateway_service_nodes
@@ -127,7 +127,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_services.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_services.yml
+            file: tasks/configure_gateway_services.yml
             apply: 
               tags: 
                 - gateway_services
@@ -139,7 +139,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_teams.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_teams.yml
+            file: tasks/configure_gateway_teams.yml
             apply: 
               tags: 
                 - gateway_teams
@@ -151,7 +151,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_users.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_users.yml
+            file: tasks/configure_gateway_users.yml
             apply: 
               tags: 
                 - gateway_users
@@ -163,7 +163,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_role_user_assignments.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_role_user_assignments.yml
+            file: tasks/configure_gateway_role_user_assignments.yml
             apply: 
               tags: 
                 - gateway_role_user_assignments
@@ -175,7 +175,7 @@
 
         - name: INCLUDE_TASK | configure_gateway_routes.yml
           ansible.builtin.include_tasks:
-            file: configure_gateway_routes.yml
+            file: tasks/configure_gateway_routes.yml
             apply: 
               tags: 
                 - gateway_routes
@@ -191,7 +191,7 @@
       block: 
         - name: INCLUDE_TASK | configure_hub_namespaces.yml
           ansible.builtin.include_tasks:
-            file: configure_hub_namespaces.yml
+            file: tasks/configure_hub_namespaces.yml
             apply: 
               tags: 
                 - hub_namespaces
@@ -203,7 +203,7 @@
         
         - name: INCLUDE_TASK | configure_hub_collections.yml
           ansible.builtin.include_tasks:
-            file: configure_hub_collections.yml
+            file: tasks/configure_hub_collections.yml
             apply: 
               tags: 
                 - hub_collections
@@ -215,7 +215,7 @@
         
         - name: INCLUDE_TASK | configure_hub_registries.yml
           ansible.builtin.include_tasks:
-            file: configure_hub_registries.yml
+            file: tasks/configure_hub_registries.yml
             apply: 
               tags: 
                 - hub_registries
@@ -227,7 +227,7 @@
         
         - name: INCLUDE_TASK | configure_hub_collection_repositories.yml
           ansible.builtin.include_tasks:
-            file: configure_hub_collection_repositories.yml
+            file: tasks/configure_hub_collection_repositories.yml
             apply: 
               tags: 
                 - hub_collection_repositories
@@ -239,7 +239,7 @@
         
         - name: INCLUDE_TASK | configure_hub_ee_images.yml
           ansible.builtin.include_tasks:
-            file: configure_hub_ee_images.yml
+            file: tasks/configure_hub_ee_images.yml
             apply: 
               tags: 
                 - hub_ee_images
@@ -251,7 +251,7 @@
         
         - name: INCLUDE_TASK | configure_hub_collection_remotes.yml
           ansible.builtin.include_tasks:
-            file: configure_hub_collection_remotes.yml
+            file: tasks/configure_hub_collection_remotes.yml
             apply: 
               tags: 
                 - hub_collection_remotes
@@ -267,7 +267,7 @@
       block: 
         - name: INCLUDE_TASK | configure_controller_settings.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_settings.yml
+            file: tasks/configure_controller_settings.yml
             apply: 
               tags: 
                 - controller_settings
@@ -279,7 +279,7 @@
 
         - name: INCLUDE_TASK | configure_controller_instances.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_instances.yml
+            file: tasks/configure_controller_instances.yml
             apply: 
               tags: 
                 - controller_instances
@@ -291,7 +291,7 @@
 
         - name: INCLUDE_TASK | configure_controller_instance_groups.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_instance_groups.yml
+            file: tasks/configure_controller_instance_groups.yml
             apply: 
               tags: 
                 - controller_instance_groups
@@ -303,7 +303,7 @@
 
         - name: INCLUDE_TASK | configure_controller_labels.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_labels.yml
+            file: tasks/configure_controller_labels.yml
             apply: 
               tags: 
                 - controller_labels
@@ -315,7 +315,7 @@
 
         - name: INCLUDE_TASK | configure_controller_credential_types.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_credential_types.yml
+            file: tasks/configure_controller_credential_types.yml
             apply: 
               tags: 
                 - controller_credential_types
@@ -327,7 +327,7 @@
         
         - name: INCLUDE_TASK | configure_controller_credentials.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_credentials.yml
+            file: tasks/configure_controller_credentials.yml
             apply: 
               tags: 
                 - controller_credentials
@@ -339,7 +339,7 @@
 
         - name: INCLUDE_TASK | configure_controller_credential_input_sources.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_credential_input_sources.yml
+            file: tasks/configure_controller_credential_input_sources.yml
             apply: 
               tags: 
                 - controller_credential_input_sources
@@ -351,7 +351,7 @@
 
         - name: INCLUDE_TASK | configure_controller_execution_environments.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_execution_environments.yml
+            file: tasks/configure_controller_execution_environments.yml
             apply: 
               tags: 
                 - controller_execution_environments
@@ -363,7 +363,7 @@
 
         - name: INCLUDE_TASK | configure_controller_applications.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_applications.yml
+            file: tasks/configure_controller_applications.yml
             apply: 
               tags: 
                 - configure_controller_applications
@@ -375,7 +375,7 @@
 
         - name: INCLUDE_TASK | configure_controller_notification_templates.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_notification_templates.yml
+            file: tasks/configure_controller_notification_templates.yml
             apply: 
               tags: 
                 - controller_notification_templates
@@ -387,7 +387,7 @@
 
         - name: INCLUDE_TASK | configure_controller_projects.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_projects.yml
+            file: tasks/configure_controller_projects.yml
             apply: 
               tags: 
                 - controller_projects
@@ -399,7 +399,7 @@
 
         - name: INCLUDE_TASK | configure_controller_inventories.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_inventories.yml
+            file: tasks/configure_controller_inventories.yml
             apply: 
               tags: 
                 - controller_inventories
@@ -414,7 +414,7 @@
 
         - name: INCLUDE_TASK | configure_controller_hosts.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_hosts.yml
+            file: tasks/configure_controller_hosts.yml
             apply: 
               tags: 
                 - controller_hosts
@@ -429,7 +429,7 @@
 
         - name: INCLUDE_TASK | configure_controller_bulk_hosts.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_bulk_hosts.yml
+            file: tasks/configure_controller_bulk_hosts.yml
             apply: 
               tags: 
                 - controller_bulk_hosts
@@ -441,7 +441,7 @@
 
         - name: INCLUDE_TASK | configure_controller_job_templates.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_job_templates.yml
+            file: tasks/configure_controller_job_templates.yml
             apply: 
               tags: 
                 - controller_job_templates
@@ -453,7 +453,7 @@
 
         - name: INCLUDE_TASK | configure_controller_workflow_job_templates.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_workflow_job_templates.yml
+            file: tasks/configure_controller_workflow_job_templates.yml
             apply: 
               tags: 
                 - controller_workflow_job_templates
@@ -465,7 +465,7 @@
         
         - name: INCLUDE_TASK | configure_controller_schedules.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_schedules.yml
+            file: tasks/configure_controller_schedules.yml
             apply: 
               tags: 
                 - controller_schedules
@@ -477,7 +477,7 @@
         
         - name: INCLUDE_TASK | configure_controller_roles.yml
           ansible.builtin.include_tasks:
-            file: configure_controller_roles.yml
+            file: tasks/configure_controller_roles.yml
             apply: 
               tags: 
                 - controller_roles
@@ -493,7 +493,7 @@
       block: 
         - name: INCLUDE_TASK | configure_eda_credential_types.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_credential_types.yml
+            file: tasks/configure_eda_credential_types.yml
             apply: 
               tags: 
                 - eda_credential_types
@@ -505,7 +505,7 @@
         
         - name: INCLUDE_TASK | configure_eda_credentials.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_credentials.yml
+            file: tasks/configure_eda_credentials.yml
             apply: 
               tags: 
                 - eda_credentials
@@ -517,7 +517,7 @@
 
         - name: INCLUDE_TASK | configure_eda_controller_tokens.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_controller_tokens.yml
+            file: tasks/configure_eda_controller_tokens.yml
             apply: 
               tags: 
                 - eda_controller_tokens
@@ -529,7 +529,7 @@
             
         - name: INCLUDE_TASK | configure_eda_projects.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_projects.yml
+            file: tasks/configure_eda_projects.yml
             apply: 
               tags: 
                 - eda_projects
@@ -541,7 +541,7 @@
 
         - name: INCLUDE_TASK | configure_eda_event_streams.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_event_streams.yml
+            file: tasks/configure_eda_event_streams.yml
             apply: 
               tags: 
                 - eda_event_streams
@@ -553,7 +553,7 @@
         
         - name: INCLUDE_TASK | configure_eda_decision_environments.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_decision_environments.yml
+            file: tasks/configure_eda_decision_environments.yml
             apply: 
               tags: 
                 - eda_decision_environments
@@ -565,7 +565,7 @@
         
         - name: INCLUDE_TASK | configure_eda_rulebook_activations.yml
           ansible.builtin.include_tasks:
-            file: configure_eda_rulebook_activations.yml
+            file: tasks/configure_eda_rulebook_activations.yml
             apply: 
               tags: 
                 - eda_rulebook_activations
